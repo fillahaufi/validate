@@ -1,0 +1,50 @@
+.contactus {
+    text-align: center;
+    text-align: -webkit-center;
+    margin: 6em 0;
+}
+.contactus h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.contactus .contactform {
+    width: 30%;
+}
+.contactus .contactform label {
+    float: left;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+.contactus .contactform #name,
+.contactus .contactform #email {
+    width: -webkit-fill-available;
+    /* margin-bottom: 15px; */
+    padding: 10px;
+}
+.contactus .contactform #message {
+    width: -webkit-fill-available;
+    /* margin-bottom: 15px; */
+    padding: 10px;
+    resize: vertical;
+}
+.contactus .contactform .form-input-item {
+    margin-bottom: 15px;
+}
+.contactus .contactform .form-input-item #name-error,
+.contactus .contactform .form-input-item #email-error,
+.contactus .contactform .form-input-item #msg-error {
+    text-align: left;
+    color: red;
+    font-size: smaller;
+    margin-top: 5px;
+    display: none;
+}
+.contactus .contactform #submit-button {
+    width: 100%;
+    background-color: #5596c2;
+    color: white;
+    border: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}

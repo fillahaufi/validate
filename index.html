@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validasi form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="contactus">
+        <h2>Contact Us</h1>
+        <div class="contactform">
+            <form action="" name="contactus-form" onsubmit="return validateForm()">
+                <div class="form-input-item">
+                    <label for="name">Name</label><br>
+                    <input id="name" type="text">
+                    <div id="name-error">This field is required</div>
+                </div>
+                <div class="form-input-item">
+                    <label for="email">Email</label><br>
+                    <input id="email" type="text">
+                    <div id="email-error">Invalid email address</div>
+                </div>
+                <div class="form-input-item">
+                    <label for="message">Message</label><br>
+                    <textarea name="" id="message" cols="" rows="5"></textarea>
+                    <div id="msg-error">This field is required</div>
+                </div>
+                <input id="submit-button" type="submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var error = 0;
+            var a = document.forms["contactus-form"]["name"].value;
+            var nameError = document.getElementById('name-error');
+            if (a == null || a == "") {
+                // alert("Name must be filled out");
+                error++;
+                nameError.style.display = 'block';
+            }
+            else if (a != null) {
+                error = error - 1;
+                nameError.style.display = 'none';
+            }
+
+            var b = document.forms["contactus-form"]["email"].value;
+            var emailError = document.getElementById('email-error');
+            var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            if (b == null || b == "" || !b.match(pattern)) {
+                // alert("Email must be filled out");
+                error++;
+                emailError.style.display = 'block';
+            }
+            else if (b != null){
+                error = error - 1;
+                emailError.style.display = 'none';
+            }
+
+            var c = document.forms["contactus-form"]["message"].value;
+            var msgError = document.getElementById('msg-error');
+            if (c == null || c == "") {
+                // alert("Email must be filled out");
+                error++;
+                msgError.style.display = 'block';
+            }
+            else if (c != null){
+                error = error - 1;
+                msgError.style.display = 'none';
+            }
+
+            if(error>-3) {
+                // alert(error);
+                return false;
+            }
+            // alert(error);
+            return true;
+        }
+    </script>
+</body>
+</html>
